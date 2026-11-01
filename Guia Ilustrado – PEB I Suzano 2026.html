@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guia Ilustrado – PEB I Suzano 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef3f6;--card:#fff;--ink:#12303a;--mut:#4d6872;--board:#1f4d4a;--chalk:#ffd84d;--ok:#1b8a5a;--bad:#d64545;--line:#cfdde3;--hl:#e6f4ef;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1c20;--card:#17292f;--ink:#e8f1f3;--mut:#9db7bf;--board:#14393a;--line:#2a444c;--hl:#1c3a36}}
+:root[data-theme="dark"]{--bg:#0f1c20;--card:#17292f;--ink:#e8f1f3;--mut:#9db7bf;--board:#14393a;--line:#2a444c;--hl:#1c3a36}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Nunito,system-ui,sans-serif}
+h1,h2,h3{font-family:Fredoka,system-ui,sans-serif;line-height:1.2;margin:0 0 .4em}
+header{background:var(--board);color:#fff;padding:28px 18px 22px;text-align:center}
+header h1{font-size:clamp(26px,5vw,38px);color:var(--chalk)}
+header p{margin:.3em auto;max-width:560px;color:#d9ece8}
+.bar{max-width:420px;margin:14px auto 0;height:14px;border-radius:9px;background:#ffffff30;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:var(--chalk);transition:width .4s}
+nav{display:flex;gap:6px;overflow-x:auto;padding:10px 12px;background:var(--card);border-bottom:2px solid var(--line);position:sticky;top:0;z-index:5}
+nav button{flex:0 0 auto;border:2px solid var(--line);background:var(--bg);color:var(--ink);font:700 15px Nunito,sans-serif;padding:8px 14px;border-radius:20px;cursor:pointer}
+nav button[aria-selected=true]{background:var(--board);border-color:var(--board);color:var(--chalk)}
+button:focus-visible,summary:focus-visible{outline:3px solid var(--chalk);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:18px 14px 60px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:16px 18px;margin:0 0 14px}
+.tip{background:var(--hl);border-left:6px solid var(--ok);border-radius:10px;padding:10px 14px;margin:10px 0}
+.warn{border-left-color:var(--bad)}
+details{background:var(--card);border:2px solid var(--line);border-radius:14px;margin:0 0 10px}
+summary{cursor:pointer;padding:12px 16px;font:700 17px Fredoka,sans-serif;list-style:none;display:flex;gap:10px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";transition:transform .2s}details[open] summary::before{transform:rotate(90deg)}
+details>div{padding:0 18px 14px}
+summary label{margin-left:auto;font:700 13px Nunito;color:var(--mut);white-space:nowrap}
+.svgw{overflow-x:auto;margin:10px 0}.svgw svg{max-width:100%;height:auto}
+.dots{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;max-width:340px}
+.dots b{aspect-ratio:1;border-radius:50%;background:var(--line)}.dots b.h{background:var(--bad)}
+.q button.o{display:block;width:100%;text-align:left;margin:6px 0;padding:10px 14px;border:2px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:16px Nunito;cursor:pointer}
+.q button.o.ok{border-color:var(--ok);background:var(--hl)}.q button.o.no{border-color:var(--bad)}
+.btn{background:var(--board);color:var(--chalk);border:0;border-radius:20px;padding:10px 20px;font:700 16px Fredoka;cursor:pointer}
+table{border-collapse:collapse;width:100%}td,th{border:2px solid var(--line);padding:6px 10px;text-align:left}
+</style></head><body>
+<header>
+<h1>📚 Guia Ilustrado – Professor PEB I (Cód. 314)</h1>
+<p>Prefeitura de Suzano/SP · Edital 02/2026 · Banca Nosso Rumo</p>
+<p id="msg"></p>
+<div class="bar" role="progressbar" aria-label="Progresso de estudo"><i id="pb"></i></div>
+<small id="pt"></small>
+</header>
+<nav id="nav" role="tablist"></nav>
+<main id="main">
+
+<section id="inicio"><div class="card"><h2>Como usar este guia</h2>
+<p>Abra cada cartão, leia, e marque <b>“Já entendi”</b>. A barra lá em cima enche conforme você avança. Estudar 25 min e descansar 5 já rende muito. Um tema por vez!</p>
+<div class="tip"><b>Lembre:</b> você não precisa saber tudo hoje. Só precisa ser melhor que ontem. Cada cartão marcado é um ponto a mais na prova. 💪</div></div>
+<div class="card"><h2>🗺️ O mapa da prova</h2><table>
+<tr><th>Módulo</th><th>O que cai (resumo)</th></tr>
+<tr><td>Português</td><td>Interpretação, crase, concordância, pontuação</td></tr>
+<tr><td>Matemática</td><td>Porcentagem, regra de três, MMC/MDC, geometria</td></tr>
+<tr><td>Legislação</td><td>CF/88, LDB, ECA, LBI, BNCC, Lei 15.100</td></tr>
+<tr><td>Específicos</td><td>Teorias, alfabetização, ludicidade, avaliação, Suzano</td></tr></table>
+<p class="tip">Dica: o módulo <b>Específicos</b> costuma pesar mais. Comece por ele quando estiver com energia.</p></div></section>
+
+<section id="port"></section>
+<section id="mat"></section>
+<section id="leg"></section>
+<section id="esp"></section>
+
+<section id="quiz"><div class="card"><h2>🎯 Treino rápido</h2><p>As 5 questões da apostila, com correção na hora.</p><div id="qs"></div><p id="qr"></p></div></section>
+</main>
+
+<script>
+var mem={};
+function sg(k){try{return localStorage.getItem(k)}catch(e){return mem[k]||null}}
+function ss(k,v){try{localStorage.setItem(k,v)}catch(e){mem[k]=v}}
+var frases=["Um passo de cada vez. Você está construindo o seu futuro. 🌱","Concursos premiam quem não desiste. Continue! 🔥","Hoje você estuda, amanhã você ensina. 🍎","Quem estuda um pouco todo dia passa na frente de quem estuda muito um dia só. ⭐"];
+document.getElementById("msg").textContent=frases[new Date().getDate()%frases.length];
+
+/* ilustrações */
+var piaget='<svg viewBox="0 0 640 150" role="img" aria-label="Estágios de Piaget"><line x1="30" y1="75" x2="610" y2="75" stroke="currentColor" stroke-width="3" stroke-dasharray="6 6"/>'+
+[["0–2","Sensório-motor","🍼","#ff9f5a"],["2–7","Pré-operatório","🧸","#ffd84d"],["7–11","Operatório concreto","🧮","#5ac8a0"],["11+","Operatório formal","🔬","#6aa7ff"]].map(function(s,i){var x=20+i*155;return '<rect x="'+x+'" y="20" width="140" height="110" rx="16" fill="'+s[3]+'"/><text x="'+(x+70)+'" y="58" font-size="30" text-anchor="middle">'+s[2]+'</text><text x="'+(x+70)+'" y="88" font-size="17" font-weight="700" text-anchor="middle" fill="#12303a">'+s[0]+' anos</text><text x="'+(x+70)+'" y="112" font-size="13" text-anchor="middle" fill="#12303a">'+s[1]+'</text>'}).join('')+'</svg>';
+var zdp='<svg viewBox="0 0 420 260" role="img" aria-label="Zona de Desenvolvimento Proximal"><circle cx="210" cy="130" r="120" fill="#ffd84d55" stroke="#c9a400" stroke-width="3"/><circle cx="210" cy="130" r="80" fill="#5ac8a0aa" stroke="#1b8a5a" stroke-width="3"/><circle cx="210" cy="130" r="38" fill="#1f4d4a"/><text x="210" y="127" fill="#fff" font-size="13" text-anchor="middle" font-weight="700">REAL</text><text x="210" y="143" fill="#fff" font-size="11" text-anchor="middle">sozinha</text><text x="210" y="88" font-size="14" text-anchor="middle" font-weight="700" fill="#12303a">ZDP: com ajuda</text><text x="210" y="34" font-size="13" text-anchor="middle" fill="#12303a">ainda não consegue</text><text x="210" y="248" font-size="13" text-anchor="middle" fill="currentColor">O professor atua na faixa verde 🧑‍🏫</text></svg>';
+var psico='<svg viewBox="0 0 640 210" role="img" aria-label="Psicogênese da escrita"><g font-family="Nunito" text-anchor="middle">'+
+[["1. Pré-silábica","X Q Z M B","sem relação com o som","#ff9f5a",150],["2. Silábica","S P O","1 letra por sílaba","#ffd84d",115],["3. Silábico-alfabética","SAPTO","mistura os dois","#5ac8a0",80],["4. Alfabética","SAPATO","1 fonema ≈ 1 letra","#6aa7ff",45]].map(function(s,i){var x=10+i*158;return '<rect x="'+x+'" y="'+s[4]+'" width="148" height="'+(205-s[4])+'" rx="12" fill="'+s[3]+'"/><text x="'+(x+74)+'" y="'+(s[4]+22)+'" font-size="13" font-weight="700" fill="#12303a">'+s[0]+'</text><text x="'+(x+74)+'" y="'+(s[4]+48)+'" font-size="20" font-weight="700" fill="#12303a" letter-spacing="2">'+s[1]+'</text><text x="'+(x+74)+'" y="'+(s[4]+68)+'" font-size="11" fill="#12303a">'+s[2]+'</text>'}).join('')+'</g></svg>';
+var dots='<div class="dots" role="img" aria-label="30 alunos, 6 destacados">'+Array.from({length:30},function(_,i){return '<b class="'+(i<6?'h':'')+'"></b>'}).join('')+'</div><p>20% de 30 = 6 alunos (bolinhas vermelhas).</p>';
+
+/* conteúdo */
+var D={
+port:[["Interpretação de textos","<ul><li><b>Compreensão</b> = o que está escrito (“segundo o texto”).</li><li><b>Interpretação</b> = o que dá para deduzir (“infere-se”).</li></ul><p>Tipos: narrativo (conta), descritivo (mostra), dissertativo-argumentativo (defende ideia), expositivo (explica), injuntivo (manda/instrui).</p>","🧠 Compreensão = ler. Interpretação = deduzir."],
+["Denotação x conotação","<p><b>Denotação:</b> sentido do dicionário. <b>Conotação:</b> sentido figurado.</p><p>“Ele tem um coração de ouro” → conotação. “O coração bombeia sangue” → denotação.</p>","❤️ Dicionário = denota. Imaginação = conota."],
+["Concordância","<p><b>Verbal:</b> o verbo concorda com o núcleo do sujeito. <b>Nominal:</b> adjetivo e pronome concordam com o substantivo (gênero e número).</p>","🔗 Quem manda é o núcleo."],
+["Crase (cai muito!)","<p>Crase = <b>preposição a + artigo a</b>.</p><div class='tip warn'><b>Nunca</b> use antes de: verbos, palavras masculinas, pronomes pessoais (ele), artigo indefinido (uma), plural genérico.</div><p>Truque: troque por “ao”. Se der certo (vou <i>ao</i> parque), tem crase (vou <i>à</i> escola).</p>","🔁 Teste do “ao”."]],
+mat:[["Porcentagem",dots+"<p>p% = p/100. Ex.: 20/100 × 30 = 6.</p>","💯 Percentual vira fração sobre 100."],
+["Regra de três","<p>Antes de montar, pergunte: as grandezas são <b>diretas</b> (as duas sobem) ou <b>inversas</b> (uma sobe, outra desce)?</p><p>Proporção: a/b = c/d ⇒ a·d = b·c (multiplicação cruzada).</p>","✖️ Cruzou, multiplicou."],
+["MMC e MDC","<p><b>MMC:</b> eventos que se repetem juntos (“daqui a quanto tempo coincidem?”).<br><b>MDC:</b> dividir em lotes iguais, os maiores possíveis.</p>","⏰ MMC = Momento. 📦 MDC = Dividir."],
+["Média e geometria","<p>Média = soma dos valores ÷ quantidade.</p><p>Áreas: triângulo b·h/2 · quadrado l² · retângulo b·h · círculo πr².</p><p>1 m³ = 1.000 litros · 1 dm³ = 1 litro · 1 h = 3.600 s.</p>","📐 Triângulo é “meio retângulo”."]],
+leg:[["Constituição (Arts. 205 a 214)","<ul><li>Art. 205: educação é direito de todos, dever do Estado e da família.</li><li>Art. 206: igualdade de acesso, gratuidade, gestão democrática, valorização dos profissionais.</li><li>Art. 208: ensino obrigatório e gratuito dos <b>4 aos 17 anos</b>; AEE de preferência na rede regular.</li></ul>","🎓 4 a 17."],
+["LDB – Lei 9.394/96","<table><tr><td>Creche</td><td>0 a 3 anos</td></tr><tr><td>Pré-escola</td><td>4 e 5 anos, frequência mínima 60%</td></tr><tr><td>Fundamental</td><td>9 anos, desde os 6, frequência mínima 75%</td></tr><tr><td>Ed. Infantil</td><td>800 h em 200 dias, <b>sem reprovação</b></td></tr></table><p>Faltas acima de 30% do limite → escola avisa o Conselho Tutelar (Art. 12, VIII).</p>","6️⃣0️⃣ pré-escola. 7️⃣5️⃣ fundamental."],
+["ECA e LBI","<p><b>ECA, Art. 56:</b> comunicar ao Conselho Tutelar maus-tratos, faltas reiteradas e repetência elevada.</p><p><b>LBI (13.146/2015):</b> escola inclusiva. Proibido recusar matrícula ou cobrar taxa extra de aluno com deficiência.</p>","🛡️ Escola protege e inclui."],
+["BNCC e leis recentes","<p>BNCC: 10 competências gerais. Ed. Infantil: 6 direitos (conviver, brincar, participar, explorar, expressar, conhecer-se) e campos de experiências. Anos iniciais: áreas do conhecimento.</p><p>Leis 10.639/03 e 11.645/08: história afro-brasileira e indígena obrigatória. Lei 15.100/2025: regras sobre celulares na escola.</p>","🧩 CBPEEC: Conviver, Brincar, Participar, Explorar, Expressar, Conhecer-se."]],
+esp:[["Teorias pedagógicas","<ul><li><b>Tradicional:</b> professor no centro.</li><li><b>Tecnicista:</b> técnica e eficiência.</li><li><b>Progressista:</b> transformar a sociedade (Freire, Libâneo, Saviani).</li><li><b>Construtivista (Piaget):</b> aluno constrói o saber.</li><li><b>Sociointeracionista (Vygotsky):</b> aprende-se com os outros.</li></ul>","👨‍🏫 Tradicional fala. 👧 Construtivista descobre."],
+["Piaget: 4 estágios",'<div class="svgw">'+piaget+'</div><p>Processos: <b>assimilação</b>, <b>acomodação</b>, <b>equilibração</b>.</p>',"🍼🧸🧮🔬 do bebê ao cientista."],
+["Vygotsky e a ZDP",'<div class="svgw">'+zdp+'</div><p>ZDP = distância entre o que a criança faz sozinha e o que faz com ajuda.</p>',"🪜 ZDP é a escada da mediação."],
+["Alfabetização e letramento",'<p><b>Alfabetizar:</b> dominar o sistema de escrita. <b>Letrar:</b> usar a escrita nas práticas sociais. Lema: “alfabetizar letrando”.</p><div class="svgw">'+psico+'</div><p>Autoras: Emília Ferreiro e Ana Teberosky.</p>',"🪜 Pré → Silábica → Silábico-alfabética → Alfabética."],
+["Brincar e raciocínio lógico","<p>Brincar é a linguagem da criança: desenvolve regras, empatia, imaginação e autorregulação. O RCNEI diz que <b>cuidar e educar são inseparáveis</b>.</p><p>Matemática começa no concreto: classificar, seriar, comparar, ordenar, e só depois vem o numeral escrito.</p>","🧸 Primeiro mão, depois número."],
+["Planejamento e avaliação","<ul><li><b>PPP:</b> identidade e metas da escola, feito por todos.</li><li><b>Diagnóstica:</b> no início.</li><li><b>Formativa:</b> no processo, ajuda a reorientar.</li><li><b>Somativa:</b> no fim, dá nota.</li><li><b>Ed. Infantil:</b> só observar e registrar (relatórios, portfólios), sem promover ou reter.</li></ul>","🩺 Diagnóstica (início) · 🧭 Formativa (caminho) · 🏁 Somativa (fim)."],
+["Suzano: história e estatuto","<ul><li>Origem na Vila de Piedade; emancipação em <b>1949</b>.</li><li>Nome em homenagem a Joaquim Augusto Suzano Brandão.</li><li>Estatuto (Lei Municipal 190/2010): estágio probatório de <b>3 anos</b>; avaliação por assiduidade, disciplina, iniciativa, produtividade e responsabilidade.</li></ul>","📅 1949 e 3 anos."]]
+};
+var tabs=[["inicio","🏠 Início"],["port","📖 Português"],["mat","🔢 Matemática"],["leg","⚖️ Legislação"],["esp","🎒 Específicos"],["quiz","🎯 Treino"]];
+var total=0,done={};try{done=JSON.parse(sg("done")||"{}")}catch(e){}
+Object.keys(D).forEach(function(k){
+ var s=document.getElementById(k);s.innerHTML="<h2>"+tabs.filter(function(t){return t[0]==k})[0][1]+"</h2>";
+ D[k].forEach(function(it,i){total++;var id=k+i,d=document.createElement("details");
+  d.innerHTML="<summary>"+it[0]+"<label><input type='checkbox' "+(done[id]?"checked":"")+"> Já entendi</label></summary><div>"+it[1]+"<div class='tip'><b>Macete:</b> "+it[2]+"</div></div>";
+  var cb=d.querySelector("input");cb.onclick=function(e){e.stopPropagation()};
+  cb.onchange=function(){done[id]=cb.checked;ss("done",JSON.stringify(done));prog()};
+  s.appendChild(d)})});
+function prog(){var n=Object.keys(done).filter(function(k){return done[k]}).length,p=Math.round(100*n/total);
+ document.getElementById("pb").style.width=p+"%";document.getElementById("pt").textContent=n+" de "+total+" temas dominados ("+p+"%)"+(p==100?" 🏆 Parabéns!":"")}
+prog();
+var nav=document.getElementById("nav");
+tabs.forEach(function(t,i){var b=document.createElement("button");b.textContent=t[1];b.setAttribute("role","tab");b.setAttribute("aria-selected",i==0);
+ b.onclick=function(){nav.querySelectorAll("button").forEach(function(x){x.setAttribute("aria-selected",x==b)});
+  document.querySelectorAll("section").forEach(function(s){s.classList.toggle("on",s.id==t[0])});window.scrollTo(0,0)};nav.appendChild(b)});
+document.getElementById("inicio").classList.add("on");
+
+/* quiz */
+var Q=[["Aluno escreve “SPO” para SAPATO (uma letra por sílaba, com som). Qual a hipótese?",["Pré-silábica","Silábica com valor sonoro","Silábico-alfabética","Alfabética"],1,"Uma letra por sílaba, e as letras têm relação com o som: silábica com valor sonoro."],
+["Segundo o Art. 31 da LDB, a avaliação na Educação Infantil é feita por:",["Provas bimestrais com nota","Exame final para o 1º ano","Acompanhamento e registro do desenvolvimento, sem objetivo de promoção","Ranking de desempenho"],2,"Sem promoção, mesmo para acesso ao Ensino Fundamental."],
+["A distância entre o nível real e o potencial, em Vygotsky, é a:",["Assimilação","Zona de Desenvolvimento Proximal","Equilibração","Função semiótica"],1,"ZDP: é aqui que o professor medeia."],
+["Crase CORRETA:",["referiu-se à uma aluna","encaminhadas à pedagogas","dirigiu-se à sala dos professores","começou à planejar"],2,"Quem se dirige, dirige-se A algum lugar; a + a sala = à sala."],
+["Em 30 alunos, 20% estão na hipótese pré-silábica. Quantos são?",["4","5","6","8"],2,"20/100 × 30 = 6."]];
+var sc=0,ans=0,qs=document.getElementById("qs");
+Q.forEach(function(q,i){var d=document.createElement("div");d.className="q";d.innerHTML="<h3>"+(i+1)+". "+q[0]+"</h3>";
+ q[1].forEach(function(o,j){var b=document.createElement("button");b.className="o";b.textContent=String.fromCharCode(65+j)+") "+o;
+  b.onclick=function(){if(d.dataset.d)return;d.dataset.d=1;ans++;var bs=d.querySelectorAll(".o");bs[q[2]].classList.add("ok");
+   if(j==q[2])sc++;else b.classList.add("no");
+   var p=document.createElement("p");p.className="tip"+(j==q[2]?"":" warn");p.textContent=(j==q[2]?"✅ Isso! ":"❌ Quase! ")+q[3];d.appendChild(p);
+   if(ans==Q.length)document.getElementById("qr").innerHTML="<b>Resultado: "+sc+" de "+Q.length+".</b> "+(sc>=4?"Excelente! 🎉":"Releia os cartões e tente de novo. Erro é treino! 💪")};
+  d.appendChild(b)});qs.appendChild(d)});
+</script></body></html>
